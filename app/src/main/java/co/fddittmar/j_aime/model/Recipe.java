@@ -3,13 +3,14 @@ package co.fddittmar.j_aime.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Fernnando on 24/07/2017.
  */
 
-public class Recipe {
+public class Recipe implements Serializable{
     @SerializedName("title")
     @Expose
     private String title;
