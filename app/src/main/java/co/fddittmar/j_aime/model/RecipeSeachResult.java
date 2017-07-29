@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Fernnando on 24/07/2017.
  */
 
-public class APIResponse implements Serializable {
+public class RecipeSeachResult implements Serializable {
     @SerializedName("title")
     private String title;
     @SerializedName("version")
