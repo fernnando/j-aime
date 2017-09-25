@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">J-Aime</string>
+    <string name="default_loading_recipes">Search for your recipe</string>
+    <string name="error_loading_recipes">There was an error loading the recipes.</string>
+    <string name="search">Search</string>
+    <string name="list_dot">•</string>
+    <string name="recipe_picture_description">Picture of the recipe</string>
+    <string name="label_icon">Label icon</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="ingredients_icon">Ingredients icon</string>
 </resources>

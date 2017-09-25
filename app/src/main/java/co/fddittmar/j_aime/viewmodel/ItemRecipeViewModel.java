@@ -2,47 +2,48 @@ package co.fddittmar.j_aime.viewmodel;
 
 import android.content.Context;
 import android.databinding.BaseObservable;
-import android.databinding.BindingAdapter;
-import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
-
-import java.util.List;
+import android.view.View;
 
 import co.fddittmar.j_aime.model.Recipe;
+import co.fddittmar.j_aime.view.RecipeDetailActivity;
 
 /**
- * Created by Fernnando on 24/07/2017.
+ * Recipe item View Model
  */
 
 public class ItemRecipeViewModel extends BaseObservable{
-    private Recipe mRecipe;
-    private Context mContext;
+    private Recipe recipe;
+    private Context context;
 
-    public ItemRecipeViewModel(Recipe recipe , Context context) {
-        mRecipe = recipe;
-        mContext = context;
+    public ItemRecipeViewModel(Recipe recipe, Context context) {
+        this.recipe = recipe;
+        this.context = context;
     }
 
-    public String getTitle(){
-        return mRecipe.getTitle();
+    public String getTitle() {
+        return recipe.title;
     }
 
-    public String getHref(){
-        return mRecipe.getHref();
+    public String getHref() {
+        return recipe.href;
     }
 
-    public List<String> getIngredients(){
-        return mRecipe.getIngredients();
+    public String getIngredients() {
+        return recipe.ingredients;
     }
 
-    public String getThumbnail(){
-        return mRecipe.getThumbnail();
+    public String getPicture() {
+
+        return recipe.picture;
     }
 
-    @BindingAdapter({"bind:imageUrl"})
-    public static void loadImage(ImageView view, String imageUrl) {
-        Glide.with(view.getContext()).load(imageUrl).into(view);
+    public void onItemClick(View view) {
+        context.startActivity(RecipeDetailActivity.launchDetail(view.getContext(), recipe));
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+        notifyChange();
     }
 
 }
